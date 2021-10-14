@@ -14,14 +14,16 @@ h2 {
 }
 
 .major-card {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 10px;
+  border: 1px solid #222831;
+  border-radius: 5px;
   background: linear-gradient(
     109.6deg,
     rgb(223, 234, 247) 11.2%,
     rgb(244, 248, 252) 91.1%
   );
-  display: block;
-  border-radius: 20px;
-  margin-top: 15px;
   font-family: "Courier New", Courier, monospace;
 }
 
