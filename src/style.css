@@ -19,11 +19,7 @@ h2 {
   padding: 10px;
   border: 1px solid #222831;
   border-radius: 5px;
-  background: linear-gradient(
-    109.6deg,
-    rgb(223, 234, 247) 11.2%,
-    rgb(244, 248, 252) 91.1%
-  );
+  background-color: #93e4c1;
   font-family: "Courier New", Courier, monospace;
 }
 
@@ -31,13 +27,13 @@ button {
   display: inline;
   margin: 0 auto;
   color: #222831;
-  background-color: #d5eeff;
+  background-color: #c9fdd7;
   border-radius: 10px;
   border: 1px solid white;
   box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
 }
 
-.search-space {
+#search-space {
   display: inline;
   margin: 25px 0 25px 25px;
   text-align: center;
@@ -47,14 +43,20 @@ button {
   box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
 }
 
-.buttom-search {
+#buttom-search {
   display: inline;
   margin: 0 auto;
   color: #222831;
-  background-color: #d5eeff;
+  background-color: #c9fdd7;
   border-radius: 10px;
   border: 1px solid white;
   box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 #date {
@@ -74,25 +76,6 @@ button {
   font-weight: bolder;
   text-align: right;
   margin-right: 5px;
-}
-
-.card {
-  display: block;
-  margin: 0 auto;
-}
-
-.card-title,
-.card-text {
-  text-align: center;
-  font-size: 16px;
-}
-
-.card-title {
-  font-weight: bolder;
-}
-
-.emoji {
-  font-size: 15px;
 }
 
 .built {

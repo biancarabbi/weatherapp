@@ -1,5 +1,5 @@
-// homework week 4
-function formatDate(date) {
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -9,7 +9,6 @@ function formatDate(date) {
     minutes = `0${minutes}`;
   }
 
-  let dayIndex = date.getDay();
   let days = [
     "Sunday",
     "Monday",
@@ -19,46 +18,58 @@ function formatDate(date) {
     "Friday",
     "Saturday",
   ];
-  let day = days[dayIndex];
+  let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
 
-let dateElement = document.querySelector("#date");
-let currentTime = new Date();
-dateElement.innerHTML = formatDate(currentTime);
-
-function searchCity(event) {
-  event.preventDefault();
+function displayTemperature(response) {
+  let temperatureElement = document.querySelector("#temp");
   let cityElement = document.querySelector("#city");
-  let cityInput = document.querySelector("#city-search");
-  cityElement.innerHTML = cityInput.value;
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let dateElement = document.querySelector("#date");
+  let iconElement = document.querySelector("#icon");
 
-  search(cityInput.value);
+  celsiusTemperature = response.data.main.temp;
+
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  cityElement.innerHTML = response.data.name;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-let searchForm = document.querySelector("#find-city");
-searchForm.addEventListener("submit", searchCity);
-// end homework week 4
-
-// homework week 5
 function search(city) {
   let apiKey = "b44bf0cf8936f7dcf09221d3a954213b";
-  let units = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-
-  axios.get(apiUrl).then(showTemperature);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
 }
 
-function showTemperature(response) {
-  let temp = Math.round(response.data.main.temp);
-  let heading = document.querySelector("#temp");
-  heading.innerHTML = temp;
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#search-space");
+  search(cityInputElement.value);
 }
 
+window.onload = function () {
+  let form = document.querySelector("#find-city");
+  form.addEventListener("submit", handleSubmit);
+};
+
+search("São Paulo");
+
+/*
 function showPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
 }
 
 navigator.geolocation.getCurrentPosition(showPosition);
-// end homework 5
+*/

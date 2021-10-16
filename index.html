@@ -20,8 +20,8 @@
       href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap"
       rel="stylesheet"
     />
-    <script src="src/index.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="src/index.js"></script>
   </head>
   <body>
     <div class="container">
@@ -32,75 +32,25 @@
             placeholder="enter a city"
             autocomplete="off"
             autofocus="on"
-            class="search-space"
-            id="city-search"
+            id="search-space"
           />
-          <input type="submit" value="search" class="buttom-search" />
+          <input type="submit" value="search" id="buttom-search" />
           <button>current location</button>
         </form>
 
-        <h2 id="temp">26°C</h2>
-        <p id="date">Friday, 17h00</p>
+        <h2 id="temp">
+          <span class="units"> °C</span>
+        </h2>
+        <li id="description"></li>
+        <p id="date"></p>
 
-        <h1 id="city">São Paulo, Brazil</h1>
-        <p class="conditions">
-          wind: 14 km/h <br />
-          humidity: 89% <br />
-          chance of rain: 9%
-        </p>
-
-        <div class="container">
-          <div class="row">
-            <div class="card" style="width: 10rem">
-              <div class="card-body">
-                <h5 class="card-title">Saturday</h5>
-                <p class="card-text emoji">
-                  ⛅ <br />
-                  32°C / 18°C
-                </p>
-              </div>
-            </div>
-
-            <div class="card" style="width: 10rem">
-              <div class="card-body">
-                <h5 class="card-title">Sunday</h5>
-                <p class="card-text emoji">
-                  ⛅ <br />
-                  30°C / 18°C
-                </p>
-              </div>
-            </div>
-
-            <div class="card" style="width: 10rem">
-              <div class="card-body">
-                <h5 class="card-title">Monday</h5>
-                <p class="card-text emoji">
-                  ☁ <br />
-                  34°C / 20°C
-                </p>
-              </div>
-            </div>
-
-            <div class="card" style="width: 10rem">
-              <div class="card-body">
-                <h5 class="card-title">Tuesday</h5>
-                <p class="card-text emoji">
-                  ☁ <br />
-                  33°C / 14°C
-                </p>
-              </div>
-            </div>
-
-            <div class="card" style="width: 10rem">
-              <div class="card-body">
-                <h5 class="card-title">Wednesday</h5>
-                <p class="card-text emoji">
-                  ⛅ <br />
-                  17°C / 13°C
-                </p>
-              </div>
-            </div>
-          </div>
+        <div>
+          <h1 id="city"></h1>
+          <img src="" alt="Clear" id="icon" class="float-left" />
+          <ul class="conditions">
+            <li>wind: <span id="wind"></span>km/h</li>
+            <li>humidity: <span id="humidity"></span>%</li>
+          </ul>
         </div>
         <br />
         <p class="built">
