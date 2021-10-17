@@ -21,7 +21,6 @@
       rel="stylesheet"
     />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="src/index.js"></script>
   </head>
   <body>
     <div class="container">
@@ -38,7 +37,8 @@
           <button>current location</button>
         </form>
 
-        <h2 id="temp">
+        <h2>
+          <span id="temp"></span>
           <span class="units"> °C</span>
         </h2>
         <li id="description"></li>
@@ -61,5 +61,6 @@
         </p>
       </div>
     </div>
+    <script src="src/index.js"></script>
   </body>
 </html>
