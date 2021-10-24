@@ -30,16 +30,6 @@ h2 {
   font-family: "Courier New", Courier, monospace;
 }
 
-button {
-  display: inline;
-  margin: 0 auto;
-  color: #222831;
-  background-color: #ffdcf5;
-  border-radius: 10px;
-  border: 1px solid white;
-  box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
-}
-
 #search-space {
   display: inline;
   margin: 25px 0 25px 25px;
