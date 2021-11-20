@@ -64,12 +64,3 @@ window.onload = function () {
 };
 
 search("São Paulo");
-
-/*
-function showPosition(position) {
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-}
-
-navigator.geolocation.getCurrentPosition(showPosition);
-*/
