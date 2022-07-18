@@ -12,7 +12,7 @@
 ## project description: :memo:
 
 <p align="justify">
-app developed during <strongSheCodes Plus</strong> classes.</p>
+app developed during <strong>SheCodes Plus</strong> classes.</p>
 <p>in the application it's possible to search for cities and, through the API, obtain information about temperature, wind and humidity.
 
 
